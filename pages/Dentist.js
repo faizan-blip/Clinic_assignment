@@ -8,7 +8,7 @@ const dentist = () => {
     const [data , setData] = useState([])
 
   const dentistdata = async()=>{
-  const response = await axios.get('http://localhost:3000/doctors/dentists')
+  const response = await axios.get('https://clinic-backend-0qc7.onrender.com/doctors/dentists')
   console.log(response.data);
   setData(response.data)
     }

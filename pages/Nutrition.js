@@ -7,7 +7,7 @@ const nutrition = () => {
     const [data , setData] = useState([])
 
     const nutrodata = async()=>{
-    const response = await axios.get('http://localhost:3000/doctors/nutritionists')
+    const response = await axios.get('https://clinic-backend-0qc7.onrender.com/doctors/nutritionists')
     console.log(response.data);
     setData(response.data)
       }

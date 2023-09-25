@@ -7,7 +7,7 @@ const gyno = () => {
     const [data , setData] = useState([])
 
     const gynodata = async()=>{
-    const response = await axios.get('http://localhost:3000/doctors/gynecologists')
+    const response = await axios.get('https://clinic-backend-0qc7.onrender.com/doctors/gynecologists')
     console.log(response.data);
     setData(response.data)
       }
