@@ -3,14 +3,17 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import EventIcon from '@mui/icons-material/Event';
 import ThumbUpIcon from '@mui/icons-material/ThumbUp';
+import { Blocks } from "react-loader-spinner";
 const dentist = () => {
-
+    const[loader , setLoader] = useState(true)
     const [data , setData] = useState([])
 
   const dentistdata = async()=>{
+    setLoader(true)
   const response = await axios.get('https://clinic-backend-0qc7.onrender.com/doctors/dentists')
   console.log(response.data);
   setData(response.data)
+  setLoader(false)
     }
 
     useEffect(()=>{
@@ -20,6 +23,16 @@ const dentist = () => {
     return ( 
         <>
       <Stack flexDirection='column' margin={{md:"1em 12em" ,xs:"1em 0em"}} gap='1em' justifyContent='center' alignItems='center' minHeight='100vh' height='100%' bgcolor='#fff'>
+        {
+            loader ? (<Blocks
+                visible={true}
+                height="80"
+                width="80"
+                ariaLabel="blocks-loading"
+                wrapperStyle={{}}
+                wrapperClass="blocks-wrapper"
+              />):(
+        <>
        {
         data.map((dat , index)=>(
         <Box key={index} sx={{display:"flex" , flexDirection:"column" , gap:"0.5em" , width:"100%"}}>
@@ -46,7 +59,10 @@ const dentist = () => {
         </Box>
         ))
        }
-       <Divider sx={{width:"100%" , border:"2px solid #000" , justifyContent:"center"}}/>
+       <Divider sx={{width:"100%" , border:"2px solid #000" , justifyContent:"center"}}/>  
+       </>
+       )
+    }
       </Stack>
         </>
      );
