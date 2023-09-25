@@ -21,7 +21,7 @@ export default function Home() {
 
   return (
     <>
-    <Stack flexDirection='column' minHeight='90vh' height='100%' bgcolor='#f5f5f5' gap='0.7em' justifyContent='center' alignItems='center'>
+    <Stack flexDirection='column' minHeight='90vh' height='100%' bgcolor='#fff' gap='0.7em' justifyContent='center' alignItems='center'>
       <Stack flexDirection='column' gap='0.2em' >
      <Typography fontWeight='900' fontSize='22px' textAlign='start'>Book an appointment for an in-clinic consultation</Typography>
      <Typography fontSize='16px'>Find experienced doctors all specialties</Typography>
